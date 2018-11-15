@@ -1,24 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Breathe View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="BreatheViewController" customModule="BetterMe_Test_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-W0-zU3" customClass="BreatheView" customModule="BetterMe_Test_App" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-hg-pa5">
+                                        <rect key="frame" x="64.5" y="76.5" width="71.5" height="47"/>
+                                        <subviews>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inhale" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtG-fm-rmp">
+                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyW-n7-QJM">
+                                                <rect key="frame" x="0.0" y="26" width="71.5" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="LtG-fm-rmp" secondAttribute="trailing" id="5er-6y-L6g"/>
+                                            <constraint firstAttribute="trailing" secondItem="xyW-n7-QJM" secondAttribute="trailing" id="Ats-32-bHB"/>
+                                            <constraint firstItem="LtG-fm-rmp" firstAttribute="top" secondItem="KYU-hg-pa5" secondAttribute="top" id="NB8-eA-MCy"/>
+                                            <constraint firstItem="xyW-n7-QJM" firstAttribute="top" secondItem="LtG-fm-rmp" secondAttribute="bottom" constant="5" id="Rvg-eW-jgH"/>
+                                            <constraint firstItem="LtG-fm-rmp" firstAttribute="leading" secondItem="KYU-hg-pa5" secondAttribute="leading" id="SCU-PR-XaK"/>
+                                            <constraint firstItem="xyW-n7-QJM" firstAttribute="leading" secondItem="KYU-hg-pa5" secondAttribute="leading" id="Vb9-vl-19d"/>
+                                            <constraint firstAttribute="bottom" secondItem="xyW-n7-QJM" secondAttribute="bottom" id="rHk-CM-trX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="Cmq-7R-mqJ"/>
+                                    <constraint firstItem="KYU-hg-pa5" firstAttribute="centerX" secondItem="M2m-W0-zU3" secondAttribute="centerX" id="P1z-eS-CXF"/>
+                                    <constraint firstAttribute="height" constant="200" id="nwf-Yc-e7N"/>
+                                    <constraint firstItem="KYU-hg-pa5" firstAttribute="centerY" secondItem="M2m-W0-zU3" secondAttribute="centerY" id="z9w-Pr-aAM"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="phaseNameLabel" destination="LtG-fm-rmp" id="TMF-GH-ERc"/>
+                                    <outlet property="timerLabel" destination="xyW-n7-QJM" id="9pE-xc-Ucl"/>
+                                </connections>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="wordWrap" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ff7-rZ-6VH">
+                                <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
+                                <state key="normal">
+                                    <attributedString key="attributedTitle">
+                                        <fragment content="TAP HERE TO BREATHE">
+                                            <attributes>
+                                                <font key="NSFont" size="16" name=".AppleSystemUIFont"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                </state>
+                                <connections>
+                                    <action selector="startBreathing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="seS-Lc-UXn"/>
+                                </connections>
+                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XgS-hF-DRU">
+                                <rect key="frame" x="151.5" y="626" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remaining" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cVN-GO-6vy">
+                                <rect key="frame" x="147.5" y="597" width="80" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cVN-GO-6vy" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="9Zc-49-ys0"/>
+                            <constraint firstItem="M2m-W0-zU3" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Bhm-f4-UNI"/>
+                            <constraint firstItem="XgS-hF-DRU" firstAttribute="top" secondItem="cVN-GO-6vy" secondAttribute="bottom" constant="8" id="FEm-Kw-x10"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XgS-hF-DRU" secondAttribute="bottom" constant="20" id="JB9-Vj-Qmo"/>
+                            <constraint firstItem="Ff7-rZ-6VH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hDn-vM-N6R"/>
+                            <constraint firstItem="XgS-hF-DRU" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="kCa-ZU-XlH"/>
+                            <constraint firstItem="M2m-W0-zU3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="orx-FF-A3d"/>
+                            <constraint firstItem="Ff7-rZ-6VH" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="vsR-tZ-dxa"/>
+                            <constraint firstItem="Ff7-rZ-6VH" firstAttribute="width" secondItem="M2m-W0-zU3" secondAttribute="width" id="xfa-gJ-Qsb"/>
+                            <constraint firstItem="Ff7-rZ-6VH" firstAttribute="height" secondItem="M2m-W0-zU3" secondAttribute="height" id="yJK-X0-QFI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="breatheView" destination="M2m-W0-zU3" id="mdf-4T-BFa"/>
+                        <outlet property="remainingTextLabel" destination="cVN-GO-6vy" id="Cho-5L-xXa"/>
+                        <outlet property="remainingTimeLabel" destination="XgS-hF-DRU" id="ROc-yZ-dCO"/>
+                        <outlet property="startButton" destination="Ff7-rZ-6VH" id="mwF-5W-E5Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="133.59999999999999" y="133.5832083958021"/>
         </scene>
     </scenes>
 </document>
