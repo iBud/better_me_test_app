@@ -20,7 +20,7 @@ class ExhaleAction: BaseAction {
     
     func playAnimation() {
         UIView.animate(withDuration: TimeInterval(phase.duration)) {
-            self.view.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
+            self.view.animatedView.transform = CGAffineTransform.identity.scaledBy(x: 0.5, y: 0.5)
         }
     }
     

@@ -20,7 +20,7 @@ class InhaleAction: BaseAction {
     
     func playAnimation() {
         UIView.animate(withDuration: TimeInterval(phase.duration)) {
-            self.view.transform = CGAffineTransform.identity
+            self.view.animatedView.transform = CGAffineTransform.identity
         }
     }
     

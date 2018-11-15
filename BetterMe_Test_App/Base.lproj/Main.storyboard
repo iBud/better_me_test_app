@@ -20,17 +20,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M2m-W0-zU3" customClass="BreatheView" customModule="BetterMe_Test_App" customModuleProvider="target">
                                 <rect key="frame" x="87.5" y="233.5" width="200" height="200"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a1Y-lv-9Dp">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYU-hg-pa5">
-                                        <rect key="frame" x="64.5" y="76.5" width="71.5" height="47"/>
+                                        <rect key="frame" x="0.0" y="76.5" width="200" height="47"/>
                                         <subviews>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inhale" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LtG-fm-rmp">
-                                                <rect key="frame" x="0.0" y="0.0" width="71.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="200" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyW-n7-QJM">
-                                                <rect key="frame" x="0.0" y="26" width="71.5" height="21"/>
+                                                <rect key="frame" x="0.0" y="26" width="200" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -50,11 +54,18 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="Cmq-7R-mqJ"/>
+                                    <constraint firstItem="KYU-hg-pa5" firstAttribute="leading" secondItem="M2m-W0-zU3" secondAttribute="leading" id="FCb-tT-r0y"/>
                                     <constraint firstItem="KYU-hg-pa5" firstAttribute="centerX" secondItem="M2m-W0-zU3" secondAttribute="centerX" id="P1z-eS-CXF"/>
+                                    <constraint firstItem="a1Y-lv-9Dp" firstAttribute="top" secondItem="M2m-W0-zU3" secondAttribute="top" id="aea-X7-XPI"/>
+                                    <constraint firstAttribute="bottom" secondItem="a1Y-lv-9Dp" secondAttribute="bottom" id="b2H-XB-Hxp"/>
+                                    <constraint firstAttribute="trailing" secondItem="a1Y-lv-9Dp" secondAttribute="trailing" id="bxt-jC-oQ5"/>
                                     <constraint firstAttribute="height" constant="200" id="nwf-Yc-e7N"/>
+                                    <constraint firstItem="a1Y-lv-9Dp" firstAttribute="leading" secondItem="M2m-W0-zU3" secondAttribute="leading" id="r2Y-GN-Dtc"/>
+                                    <constraint firstAttribute="trailing" secondItem="KYU-hg-pa5" secondAttribute="trailing" id="w6l-1I-lCz"/>
                                     <constraint firstItem="KYU-hg-pa5" firstAttribute="centerY" secondItem="M2m-W0-zU3" secondAttribute="centerY" id="z9w-Pr-aAM"/>
                                 </constraints>
                                 <connections>
+                                    <outlet property="animatedView" destination="a1Y-lv-9Dp" id="Peh-gJ-Wq7"/>
                                     <outlet property="phaseNameLabel" destination="LtG-fm-rmp" id="TMF-GH-ERc"/>
                                     <outlet property="timerLabel" destination="xyW-n7-QJM" id="9pE-xc-Ucl"/>
                                 </connections>

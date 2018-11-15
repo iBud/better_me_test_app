@@ -31,8 +31,7 @@ class BreatheViewController: UIViewController {
         remainingTextLabel.isHidden = true
         remainingTimeLabel.isHidden = true
         
-        breatheView.transform = CGAffineTransform.identity.scaledBy(x: 0.75, y: 0.75)
-        breatheView.backgroundColor = UIColor.yellow
+        breatheView.setupInitialUI()
     }
         
     // MARK: - IBAction
@@ -44,9 +43,11 @@ class BreatheViewController: UIViewController {
             remainingTimeLabel.isHidden = false
             startButton.isHidden = true
             
-            let aCounter = CountDown(totalSeconds: queue.totalDuration)
-            aCounter.start { (secondsRemaining) in
-                self.remainingTimeLabel.text = String.timeString(for: secondsRemaining)
+            remainingTimeLabel.text = String.timeString(for: queue.totalDuration)
+            
+            let counter = CountDown(totalSeconds: queue.totalDuration)
+            counter.start { (secondsRemaining) in
+                self.remainingTimeLabel.text = String.timeString(for: secondsRemaining - 1)
             }
             
             queue.run(with: ActionFactory(view: breatheView)) { [weak self] in

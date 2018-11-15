@@ -21,19 +21,16 @@ protocol BaseAction: PhaseAction {
 extension BaseAction {
     
     func perform(with callback: @escaping ()->()) {
-        view.backgroundColor = phase.color
+        view.animatedView.backgroundColor = phase.color
         
         view.timerLabel.isHidden = false
         view.phaseNameLabel.isHidden = false
-        view.timerLabel.text = String.timeString(for: phase.duration)
+        view.timerLabel.text = String.timeString(for: phase.duration - 1)
         
         let countDown = CountDown(totalSeconds: phase.duration)
         countDown.start { (secondsRemaining) in
-            self.view.timerLabel.text = String.timeString(for: secondsRemaining)
+            self.view.timerLabel.text = String.timeString(for: secondsRemaining - 1)
             if secondsRemaining == 0 {
-                self.view.timerLabel.isHidden = true
-                self.view.phaseNameLabel.isHidden = true
-                
                 callback()
             }
         }

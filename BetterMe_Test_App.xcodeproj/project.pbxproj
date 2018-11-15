@@ -140,11 +140,11 @@
 		F962DAF3219D554E000777BC /* ActionImplementation */ = {
 			isa = PBXGroup;
 			children = (
+				F962DAF8219D5909000777BC /* ActionFactory.swift */,
 				F962DAF1219C7883000777BC /* BaseAction.swift */,
 				F962DAEF219C785B000777BC /* InhaleAction.swift */,
 				F962DAF4219D5745000777BC /* ExhaleAction.swift */,
 				F962DAF6219D586B000777BC /* HoldAction.swift */,
-				F962DAF8219D5909000777BC /* ActionFactory.swift */,
 			);
 			path = ActionImplementation;
 			sourceTree = "<group>";
