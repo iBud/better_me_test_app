@@ -25,6 +25,8 @@ extension BaseAction {
         
         view.timerLabel.isHidden = false
         view.phaseNameLabel.isHidden = false
+        
+        view.phaseNameLabel.text = phase.phaseName.uppercased()
         view.timerLabel.text = String.timeString(for: phase.duration - 1)
         
         let countDown = CountDown(totalSeconds: phase.duration)
@@ -34,8 +36,6 @@ extension BaseAction {
                 callback()
             }
         }
-        
-        view.phaseNameLabel.text = phase.phaseName.uppercased()
         
         playAnimation()
     }

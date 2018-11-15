@@ -43,7 +43,7 @@ class BreatheViewController: UIViewController {
             remainingTimeLabel.isHidden = false
             startButton.isHidden = true
             
-            remainingTimeLabel.text = String.timeString(for: queue.totalDuration)
+            remainingTimeLabel.text = String.timeString(for: queue.totalDuration - 1)
             
             let counter = CountDown(totalSeconds: queue.totalDuration)
             counter.start { (secondsRemaining) in
